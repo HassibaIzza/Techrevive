@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/elegant-icons.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/nice-select.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/jquery-ui.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/slicknav.min.css" type="text/css')}}">
-    <link rel="stylesheet" href="{{asset('css/styles.css" type="text/css')}}">
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!---font google--------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js?v=20240321"></script>
 
 </head>
@@ -132,7 +132,8 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html" class="navbar-brand" id="logo" style="font-family: 'Merriweather', serif"><span id="span1">T</span>Ech<span>Revive</span>
+                    </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -765,14 +766,8 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('js/jquery.slicknav.js')}}"></script>
-    <script src="{{asset('js/mixitup.min.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{ asset('js/all.js') }}"></script>
+
 
 
     

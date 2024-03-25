@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe33f98a750b8c5a51b30c78bd3fab21",
+    "content-hash": "5103f2551c57acb148e45753f6763659",
     "packages": [
         {
             "name": "brick/math",
@@ -3168,6 +3168,74 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "spatie/laravel-mix-preload",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-mix-preload.git",
+                "reference": "5cfec2aaa994801c32daae5c107c1991d4069aac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mix-preload/zipball/5cfec2aaa994801c32daae5c107c1991d4069aac",
+                "reference": "5cfec2aaa994801c32daae5c107c1991d4069aac",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.7|^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\MixPreload\\MixPreloadServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MixPreload\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add preload and prefetch links based your Mix manifest",
+            "homepage": "https://github.com/spatie/laravel-mix-preload",
+            "keywords": [
+                "laravel-mix-preload",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-mix-preload/issues",
+                "source": "https://github.com/spatie/laravel-mix-preload/tree/1.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/spatie",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-02-29T08:56:32+00:00"
         },
         {
             "name": "symfony/console",

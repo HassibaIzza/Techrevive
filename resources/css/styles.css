@@ -107,6 +107,34 @@ ol {
 	margin: 0;
 }
 
+/***********************logo********************/
+#logo {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: #333; /* Couleur du texte par défaut */
+    transition: color 0.3s ease; /* Animation de transition de couleur */
+}
+
+#logo:hover {
+    color: #87CEEB; /* Couleur du texte au survol */
+}
+
+#logo #span1 {
+    color: #87CEEB; /* Couleur du premier span */
+    font-size: 40px; /* Taille de police du premier span */
+    margin-right: 5px; /* Espacement à droite du premier span */
+}
+
+#logo span {
+    transition: color 0.3s ease; /* Animation de transition de couleur */
+}
+
+#logo span:hover {
+    color: #FFA500; /* Couleur des spans au survol */
+}
+
 /*---------------------
   Helper CSS
 -----------------------*/
