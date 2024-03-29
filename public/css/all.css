@@ -1364,7 +1364,7 @@ body {
 	height: 100%;
 	font-family: "Cairo", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	
 }
 
 h1,
@@ -1437,6 +1437,7 @@ ol {
 }
 
 /***********************logo********************/
+/* Styles pour le logo */
 #logo {
     font-family: 'Merriweather', serif;
     font-size: 30px;
@@ -1464,6 +1465,7 @@ ol {
     color: #FFA500; /* Couleur des spans au survol */
 }
 
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -1486,7 +1488,7 @@ ol {
 	right: 0;
 	height: 4px;
 	width: 80px;
-	background: #7fad39;
+	background: #87CEEB;
 	content: "";
 	margin: 0 auto;
 }
@@ -1524,7 +1526,7 @@ ol {
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 700;
-	background: #7fad39;
+	background: #87CEEB;
 	letter-spacing: 2px;
 }
 
@@ -1535,7 +1537,7 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
-	background: #7fad39;
+	background: #87CEEB;
 	border: none;
 }
 
@@ -1806,7 +1808,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: #7fad39;
+	color: #87CEEB;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -1817,7 +1819,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #7fad39;
+	color: #87CEEB;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -1827,7 +1829,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #7fad39;
+	color: #87CEEB;
 }
 
 .header__menu ul li:last-child {
@@ -1881,7 +1883,7 @@ ol {
 .header__cart ul li a span {
 	height: 13px;
 	width: 13px;
-	background: #7fad39;
+	background: #87CEEB;
 	font-size: 10px;
 	color: #ffffff;
 	line-height: 13px;
@@ -1944,7 +1946,7 @@ ol {
 }
 
 .hero__categories__all {
-	background: #7fad39;
+	background: #87CEEB;
 	position: relative;
 	padding: 10px 25px 10px 40px;
 	cursor: pointer;
@@ -2095,7 +2097,7 @@ ol {
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 4px;
-	color: #7fad39;
+	color: #87CEEB;
 }
 
 .hero__text h2 {
@@ -2108,6 +2110,7 @@ ol {
 
 .hero__text p {
 	margin-bottom: 35px;
+	color: #87CEEB;
 }
 
 /*---------------------
@@ -2115,18 +2118,19 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 270px;
+	/*height: 94px;
+	width: 270px;*/
 	position: relative;
 }
 
-.categories__item h5 {
+/*.categories__item h5 {
 	position: absolute;
 	left: 0;
 	width: 100%;
 	padding: 0 20px;
 	bottom: 20px;
 	text-align: center;
-}
+}*/
 
 .categories__item h5 a {
 	font-size: 18px;
@@ -2154,7 +2158,7 @@ ol {
 	position: absolute;
 	left: -35px;
 	top: 50%;
-	-webkit-transform: translateY(-35px);
+	/*-webkit-transform: translateY(-35px);*/
 	background: #ffffff;
 }
 
@@ -2245,8 +2249,8 @@ ol {
 }
 
 .featured__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #87CEEB;
+	border-color: #87CEEB;
 }
 
 .featured__item__pic__hover li:hover a i {
@@ -4077,7 +4081,7 @@ ol {
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #7fad39;
+	background: #FFA500;
 	color: #ffffff;
 	border-color: #ffffff;
 }
@@ -4411,7 +4415,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #87CEEB;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -4669,7 +4673,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #87CEEB;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
