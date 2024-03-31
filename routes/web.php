@@ -22,8 +22,24 @@ Route::get('/', function () {
     return view('index');
 })->name('index');*/
 
+Route::view('/login', 'login')->name('login');
+Route::view('/form', 'inscription')->name('inscription');
+
 Route::get('/view', function () {
     return view('demo');
+});
+
+Route::get('/login', function () {
+  return view('login');
+
+  
+  
+});
+Route::get('/form', function () {
+return view('inscription');
+
+
+
 });
 
 Route::get("/home", [HomeController::class,"index"]);

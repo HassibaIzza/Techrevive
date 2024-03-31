@@ -1,0 +1,79 @@
+/* Styles généraux */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Styles du container principal */
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les titres */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px; /* Ajout d'un espace après chaque titre */
+}
+
+/* Styles pour les champs de formulaire */
+.form-group {
+  margin-bottom: 20px; /* Ajout d'un espace entre chaque champ */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px; /* Ajout d'un petit espace au-dessus des champs */
+}
+
+/* Styles pour les boutons */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Ajout d'une transition pour un effet de survol plus fluide */
+}
+
+.container {
+  margin-top: 20px; /* Ajoute une marge en haut du conteneur */
+}
+
+h2 {
+  margin-bottom: 20px; /* Ajoute une marge en bas du titre */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour les liens */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
