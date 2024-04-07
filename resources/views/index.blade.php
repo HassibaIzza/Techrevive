@@ -1,4 +1,17 @@
-@extends('Layout.Master2')
+{{-- comment   @php use Illuminate\Support\Facades\Auth; @endphp
+@if(Auth::user())
+    @switch(Auth::user()->role)
+        @case("vendor")
+            @include('backend.profile.vendor_profile')
+        @case("admin")
+            @include('backend.profile.admin_profile')
+    @endswitch
+
+@else
+    @include('auth.login')
+@endif --}}
+
+@extends('Layout.master')
 
 @section('title')
     Home
@@ -74,7 +87,10 @@
     <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
-            <div class="row">
+            <div class="section-title ">
+                <h2>NOS Partenaires</h2>
+            </div>
+            <div class="row"> 
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" style="height: 94px; width: 270px;" data-setbg="img/MARQUES/ENIE.png">
@@ -252,7 +268,7 @@
     </section>
     <!-- Featured Section End -->
 
-    <!-- Banner Begin -->
+    <!-- Banner Begin
     <div class="banner">
         <div class="container">
             <div class="row">
@@ -268,7 +284,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
@@ -475,7 +491,7 @@
     </section>
     <!-- Latest Product Section End -->
 
-    <!-- Blog Section Begin -->
+    <!-- Blog Section Begin
     <section class="from-blog spad">
         <div class="container">
             <div class="row">
@@ -533,8 +549,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Blog Section End -->
 
 @endsection
     
+
+

@@ -14,14 +14,14 @@ const mix = require('laravel-mix');
        'resources/css/styles.css',
    ], 'public/css/all.css');
 
-   mix.js('resources/js/app.js', 'public/js')
+   mix.js('resources/js1/app.js', 'public/js')
    .scripts([
-       'resources/js/jquery-3.3.1.min.js',
-       'resources/js/bootstrap.min.js',
-       'resources/js/jquery.nice-select.min.js',
-       'resources/js/jquery-ui.min.js',
-       'resources/js/jquery.slicknav.js',
-       'resources/js/mixitup.min.js',
-       'resources/js/owl.carousel.min.js',
-       'resources/js/main.js',
+       'resources/js1/jquery-3.3.1.min.js',
+       'resources/js1/bootstrap.min.js',
+       'resources/js1/jquery.nice-select.min.js',
+       'resources/js1/jquery-ui.min.js',
+       'resources/js1/jquery.slicknav.js',
+       'resources/js1/mixitup.min.js',
+       'resources/js1/owl.carousel.min.js',
+       'resources/js1/main.js',
    ], 'public/js/all.js');
