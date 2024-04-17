@@ -1,7 +1,8 @@
 @php
-    use App\MyHelpers;use Illuminate\Support\Facades\Auth;
+    use App\MyHelpers;
+    use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\DB;
-    $data = DB::table('get_vendor_data')->where('id', Auth::id())->get()[0];
+    $data = DB::table('users')->where('id', Auth::id())->get()[0];
     $status = Auth::user()->status;
 @endphp
 

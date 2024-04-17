@@ -100,6 +100,15 @@ $errList['passwordErr'] = $errors->get('password') ? $errors->get('password')[0]
 
 
                                             </div>
+                                            <div class="col-sm-12">
+                                                <label for="inputRole" class="form-label">User Role</label>
+                                                <select name="role" class="form-select" id="inputRole" required>
+                                                    <option value="vendor">Vendor</option>
+                                                    <option value="client">Client</option>
+                                                    <option value="reparateur">Réparateur</option>
+                                                </select>
+                                            </div>
+                                            
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">

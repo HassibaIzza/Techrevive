@@ -39,6 +39,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'username' => ['required', 'string', 'max:100', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => 'required|string|in:vendor,client,reparateur',
         ]);
 
 
@@ -48,12 +49,12 @@ class RegisteredUserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'role' => $request->input('role'),
         ]);
 
         if ($request->role == 'vendor'){
             self::completeVendorRegistration($user);
-        }
+        } 
 
         event(new Registered($user));
 

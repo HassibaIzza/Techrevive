@@ -1,4 +1,7 @@
-@php use App\MyHelpers;use Illuminate\Support\Facades\Auth; @endphp
+@php 
+use App\MyHelpers;
+use Illuminate\Support\Facades\Auth; 
+@endphp
 @extends('backend.layouts.app')
 @section('PageTitle', 'Vendors')
 @section('content')
