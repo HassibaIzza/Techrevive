@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
                 $url = '/admin/profile';
                 break;
             case 'vendor':
-                $url = '/Fabricant/profile';
+                $url = '/vendor/profile';
                 break; // Ajout du break ici
             case 'reparateur':
                 $url = 'reparateur/profile';

@@ -34,7 +34,8 @@ class AdminController extends UserController
 
     public function userRemove(Request $request){
         try {
-            $user = User::findOrFail($request->id);
+            
+            $user = User::findOrFail($request->vendor_id);
             MyHelpers::deleteImageFromStorage($user->photo , 'uploads/images/profile/');
             if ($user->delete())
                 return redirect()->route('admin-vendor-list')->with('success', 'Successfully removed.');
@@ -46,7 +47,7 @@ class AdminController extends UserController
     }
 
     public function vendorActivate(Request $request){
-        $user_id = $request->id;
+        $user_id = $request->vendor_id;
 
         // check whether activate or de-activate
         if ($request->current_status == "1"){

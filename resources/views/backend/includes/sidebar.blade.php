@@ -97,8 +97,8 @@
                     <div class="menu-title">Products</div>
                 </a>
                 <ul>
-                    <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
-                    </li>
+                    {{-- comment <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>--}}
                     <li> <a href="{{route('vendor-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Product</a>
                     </li>
@@ -111,8 +111,8 @@
                     <div class="menu-title">Coupons</div>
                 </a>
                 <ul>
-                    <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
-                    </li>
+                    {{-- comment <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>--}}
                     <li> <a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Coupon</a>
                     </li>
