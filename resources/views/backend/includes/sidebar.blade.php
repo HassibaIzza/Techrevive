@@ -3,13 +3,16 @@
     $role = Auth::user()->role;
     $status = Auth::user()->status;
 @endphp
+
+
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('backend_assets')}}/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            <img src="{{asset('backend_assets')}}/images/laptop-1928.png" class="logo-icon" alt="logo icon">
         </div>
-        <div>
-            <h4 class="logo-text">Rukada</h4>
+        
+        <div class="header__logo">
+            <a href="{{url('http://127.0.0.1:8000/')}}"class="logo-text" style="font-family: 'Merriweather', serif"><span id="span1">T</span>Ech<span>Revive</span></a>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -42,7 +45,7 @@
                 <a  href="{{route('admin-vendor-list')}}" style="cursor: pointer">
                     <div class="parent-icon"><i class='lni lni-world'></i>
                     </div>
-                    <div class="menu-title">Vendors</div>
+                    <div class="menu-title">Users</div>
                 </a>
 
             </li>
@@ -56,8 +59,10 @@
                     <div class="menu-title">Brands</div>
                 </a>
                 <ul>
+                    @if($role === 'admin')
                     <li> <a href="{{route('brand')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
+                    @endif
                     <li> <a href="{{route('brand-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Brand</a>
                     </li>
                 </ul>
@@ -70,8 +75,10 @@
                     <div class="menu-title">Categories</div>
                 </a>
                 <ul>
+                    @if($role === 'admin')
                     <li> <a href="{{route('category')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
+                    @endif
                     <li> <a href="{{route('category-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
                     </li>
                 </ul>
@@ -97,9 +104,9 @@
                     <div class="menu-title">Products</div>
                 </a>
                 <ul>
-                    {{-- comment <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
-                    </li>--}}
-                    <li> <a href="{{route('vendor-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
+                    <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    <li> <a href="{{route($role . '-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Product</a>
                     </li>
                 </ul>
@@ -111,8 +118,8 @@
                     <div class="menu-title">Coupons</div>
                 </a>
                 <ul>
-                    {{-- comment <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
-                    </li>--}}
+                    <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
                     <li> <a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Coupon</a>
                     </li>

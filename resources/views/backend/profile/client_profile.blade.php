@@ -45,7 +45,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <form id="profile_image" method="POST" action="{{route('vendor-profile-image-update')
+                            <form id="profile_image" method="POST" action="{{route('client-profile-image-update')
                             }}" enctype="multipart/form-data">
                                 @csrf
                                 <img id="show_image" src="{{!empty($data->photo) ?

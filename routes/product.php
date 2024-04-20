@@ -44,3 +44,23 @@ Route::middleware(['auth', 'auth.role:vendor'])
         Route::post('activate_product', 'productActivate')->name('product-activate');
 
     });
+
+//for client 
+Route::middleware(['auth', 'auth.role:client'])
+    ->prefix('client')
+    ->name('client-')
+    ->controller(ProductController::class)->group(function (){
+
+        Route::get('products', 'getProducts')->name('product');
+        Route::get('add_product', 'productAdd')->name('product-add');
+        Route::post('create_product', 'productCreate')->name('product-create');
+        Route::get('remove_product/{id}', 'productRemove')
+            ->whereNumber('id')
+            ->name('product-remove');
+        Route::get('edit_product/{id}', 'productEdit')
+            ->whereNumber('id')->name('product-edit');
+        Route::post('update_product/{id}', 'productUpdate')
+            ->whereNumber('id')->name('product-update');
+        Route::post('activate_product', 'productActivate')->name('product-activate');
+
+    });

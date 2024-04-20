@@ -6,12 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <script src="{{asset('backend_assets')}}\tinymce\js\tinymce\tinymce.min.js"> </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     @include('backend.includes.favicon')
     @include('backend.includes.plugins')
     @yield('plugins')
     @include('backend.includes.css')
     @yield('css')
     <title>@yield('PageTitle')</title>
+    
 </head>
 @include('sweetalert::alert')
 

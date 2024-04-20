@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Shop Name</h6>
+                                        <h6 class="mb-0">Company Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input name="shop_name" type="text" class="form-control"
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Shop Description</h6>
+                                        <h6 class="mb-0">Company Description</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <textarea id="mytextarea"
@@ -387,12 +387,12 @@
             });
         });
     </script>
-    <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
-            referrerpolicy="origin">
-    </script>
+    <script src="{{ asset('backend_assets') }}/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#mytextarea',
+            apiKey: 'dqc852mk44lbcldyv5ikw3e7uhrl50wh4p502dbihnagdz1t', 
         });
     </script>
+    
 @endsection
