@@ -12,7 +12,7 @@
         </div>
         
         <div class="header__logo">
-            <a href="{{url('http://127.0.0.1:8000/')}}"class="logo-text" style="font-family: 'Merriweather', serif"><span id="span1">T</span>Ech<span>Revive</span></a>
+            <a href="{{url('/')}}"class="logo-text" style="font-family: 'Merriweather', serif"><span id="span1">T</span>Ech<span>Revive</span></a>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -50,8 +50,8 @@
 
             </li>
         @endif
-
-        @if($status)
+    
+        @if($status && $role != 'Fabricant' && $role != 'client')
             <li>
                 <a class="has-arrow" style="cursor: pointer">
                     <div class="parent-icon"><i class='lni lni-checkmark-circle'></i>
@@ -90,8 +90,10 @@
                     <div class="menu-title">Sub Categories</div>
                 </a>
                 <ul>
+                    @if($role === 'admin')
                     <li> <a href="{{route('sub-category')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
+                    @endif
                     <li> <a href="{{route('sub-category-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Sub
                             Category</a>
                     </li>
@@ -118,7 +120,7 @@
                     <div class="menu-title">Coupons</div>
                 </a>
                 <ul>
-                    <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    <li> <a href="{{route('vendor-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
                     <li> <a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Coupon</a>

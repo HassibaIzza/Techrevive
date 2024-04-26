@@ -18,7 +18,7 @@ Route::middleware(['auth', 'auth.role:admin'])
 
     // vendors
     Route::view('vendors', 'backend.admin.all_vendors',
-    ['data' => User::whereIn('role', ['vendor', 'client', 'reparateur'])->get()]
+    ['data' => User::whereIn('role', ['vendor', 'client', 'reparateur', 'Fabricant'])->get()]
     )->name('vendor-list');
 
     Route::post('activate_vendor', 'vendorActivate')->name('activate-vendor');

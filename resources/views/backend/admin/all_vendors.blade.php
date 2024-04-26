@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="dashboard"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Vendor List</li>
+                    <li class="breadcrumb-item active" aria-current="page">User List</li>
                 </ol>
             </nav>
         </div>
@@ -61,7 +61,7 @@ use Illuminate\Support\Facades\Auth;
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Vendor Details</h5>
+                                                <h5 class="modal-title">User Details</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                             </div>
@@ -86,6 +86,10 @@ use Illuminate\Support\Facades\Auth;
                                                     <h5 class="card-title">Phone Number : <span style="font-weight:
                                                          lighter">{{$item->phone_number ? : 'No phone number'}}</span>
                                                     </h5>
+                                                    <h5 class="card-title">User Role : <span style="font-weight:
+                                                        lighter">{{$item->role
+                                                        ? : 'No phone number'}}</span>
+                                                   </h5>
                                                     <h5 class="card-title">Status : <span style="font-weight:
                                                          lighter">
                                                             @if($item->status)

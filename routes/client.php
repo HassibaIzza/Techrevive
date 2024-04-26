@@ -15,10 +15,14 @@ Route::middleware(['auth', 'auth.role:client'])
 
         // profile
         Route::view('profile', 'backend.profile.client_profile')->name('profile');
-       
+        Route::post('profile/update_image', 'updateImage')->name('profile-image-update');
+        Route::post('profile/update_info', 'updateInfo')->name('profile-info-update');
+        Route::post('profile/update_password', 'updatePassword')->name('profile-password-update');
+
 
       // fallback
         Route::fallback(function (){
             return redirect('/client/profile');
         })->name('client');
     });
+

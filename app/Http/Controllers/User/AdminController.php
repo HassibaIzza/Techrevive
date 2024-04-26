@@ -61,18 +61,18 @@ class AdminController extends UserController
             // notify the vendor
             Notification::send($vendor, new VendorActivated());
 
-            return response(['msg' => 'Vendor now is activated.'], 200);
+            return response(['msg' => 'user now is activated.'], 200);
         }catch (ModelNotFoundException $exception){
-            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');
+            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this user, try again');
         }
     }
     public function vendorDeActivate(int $user_id){
 
         try {
             User::findOrFail($user_id)->update(['status' => 0]);
-            return response(['msg' => 'Vendor now is disabled.'], 200);
+            return response(['msg' => 'user now is disabled.'], 200);
         }catch (ModelNotFoundException $exception){
-            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');
+            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this user, try again');
         }
     }
 

@@ -60,7 +60,15 @@ class UserController extends Controller
         // validation
         $rules = [
             'password' => ['required', 'current_password'],
-            'new_password' => ['required', Password::defaults(), 'different:password'],
+            'new_password' => [
+                'required',
+                'confirmed',
+                Password::min(8) // Longueur minimale de 8 caractères
+                    ->mixedCase() // Doit contenir des majuscules et des minuscules
+                    ->numbers() // Doit contenir des chiffres
+                    ->symbols() // Doit contenir des symboles
+                    ->uncompromised(), 'different:password' // Vérifie si le mot de passe a été exposé dans des fuites de données (nécessite une connexion internet)
+            ],
             'confirm_password' => ['required', 'same:new_password']
         ];
         $data = $request->validate($rules);

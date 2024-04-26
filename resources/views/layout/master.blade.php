@@ -72,7 +72,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Accuiel</a></li>
-                <li><a href="./shop-grid.html">boutique</a></li>
+                <li><a href="/boutique">boutique</a></li>
                 <li><a href="#">Réparation</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Réparer</a></li>
@@ -150,7 +150,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Accueil</a></li>
-                            <li><a href="./shop-grid.html">Boutique</a></li>
+                            <li><a href="{{route('boutique')}}">Boutique</a></li>
                             <li><a href="#">Réparer</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Réparer</a></li>

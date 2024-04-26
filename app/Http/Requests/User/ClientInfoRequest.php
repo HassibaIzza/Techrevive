@@ -5,8 +5,7 @@ namespace App\Http\Requests\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-
-class AdminInfoRequest extends FormRequest
+class ClientInfoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +14,7 @@ class AdminInfoRequest extends FormRequest
      */
     public function authorize()
     {
-        return 1;
+        return true;
     }
 
     /**
@@ -34,6 +33,4 @@ class AdminInfoRequest extends FormRequest
             'address' => ['nullable', 'string', 'max:200'],
         ];
     }
-
-
 }

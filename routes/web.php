@@ -32,6 +32,10 @@ Route::fallback(function (){
     return redirect()->route('login');
 });
 
+Route::get('/boutique', function () {
+    return view('backend.boutique.boutique');
+})->name('boutique');
+
 
 require_once __DIR__.'/auth.php';
 require_once __DIR__.'/admin.php';
@@ -47,4 +51,6 @@ require_once __DIR__.'/notifications.php';
 require_once __DIR__.'/socialite.php';
 require_once __DIR__.'/reparateur.php';
 require_once __DIR__.'/client.php';
+require_once __DIR__.'/fabricant.php';
+
 

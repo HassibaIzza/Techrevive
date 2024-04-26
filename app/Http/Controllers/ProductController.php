@@ -68,7 +68,12 @@ class ProductController extends Controller
         if ($data['product_images'])
             unset($data['product_images']);
 
-        $insertedProductId = ProductModel::insertGetId($data);
+        try{
+            $insertedProductId = ProductModel::insertGetId($data);
+        }catch(\Exception $e){
+            return redirect('add_product')->with('error', 'Failed to add this product: ' . $e->getMessage());
+        }
+        
         if ($insertedProductId){
             // handling the product images
             if ($request->file('product_images'))

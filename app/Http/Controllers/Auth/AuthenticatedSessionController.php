@@ -38,6 +38,9 @@ class AuthenticatedSessionController extends Controller
             case 'client' :
                 $url = 'client/profile';
                 break; 
+            case 'Fabricant':
+                $url= 'Fabricant/profile';
+                break; 
             default:
                 $url = '/profile';
                 break; // Ajout du break ici
