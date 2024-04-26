@@ -15,6 +15,7 @@ Route::middleware(['auth', 'auth.role:client'])
 
         // profile
         Route::view('profile', 'backend.profile.client_profile')->name('profile');
+        Route::post('profile/update_image', 'updateImage')->name('profile-image-update');
        
 
       // fallback
