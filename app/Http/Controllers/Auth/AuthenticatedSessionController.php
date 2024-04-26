@@ -25,15 +25,22 @@ class AuthenticatedSessionController extends Controller
      */
     private function getRightRedirectRoute(): string{
         $role = Auth::user()->role;
-        switch ($role){
+        switch ($role) {
             case 'admin':
                 $url = '/admin/profile';
                 break;
             case 'vendor':
                 $url = '/vendor/profile';
-                break;
+                break; // Ajout du break ici
+            case 'reparateur':
+                $url = 'reparateur/profile';
+                break; // Ajout du break ici
+            case 'client' :
+                $url = 'client/profile';
+                break; 
             default:
                 $url = '/profile';
+                break; // Ajout du break ici
         }
         return $url;
     }

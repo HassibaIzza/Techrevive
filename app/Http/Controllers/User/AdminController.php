@@ -46,15 +46,15 @@ class AdminController extends UserController
     }
 
     public function vendorActivate(Request $request){
-        $vendor_id = $request->vendor_id;
+        $user_id = $request->id;
 
         // check whether activate or de-activate
         if ($request->current_status == "1"){
-            return $this->vendorDeActivate($vendor_id);
+            return $this->vendorDeActivate($user_id);
         }
 
         try {
-            $vendor = User::findOrFail($vendor_id);
+            $vendor = User::findOrFail($user_id);
             $vendor->update(['status' => 1]);
 
             // notify the vendor
@@ -65,10 +65,10 @@ class AdminController extends UserController
             return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');
         }
     }
-    public function vendorDeActivate(int $vendor_id){
+    public function vendorDeActivate(int $user_id){
 
         try {
-            User::findOrFail($vendor_id)->update(['status' => 0]);
+            User::findOrFail($user_id)->update(['status' => 0]);
             return response(['msg' => 'Vendor now is disabled.'], 200);
         }catch (ModelNotFoundException $exception){
             return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');

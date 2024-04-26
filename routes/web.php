@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReparateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/profile/info/update', 'ProfileController@updateInfo')->name('reparateur-profile-info-update');
+
+
 Route::get('/', function () {
     return view('index');
 });
@@ -20,6 +24,12 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::post('/reparateur/profile/image/update', [ReparateurController::class, 'updateProfileImage'])->name('reparateur-profile-image-update');
+
+Route::post('/reparateur/update-info', 'App\Http\Controllers\User\ReparateurController@updateInfo')->name('reparateur.updateInfo');
+
+
+Route::get('/reparateurs', [ReparateurController::class, 'index'])->name('reparateurs.index');
 
 Route::get('/login', function () {
     return view('login');
@@ -42,4 +52,6 @@ require_once __DIR__.'/product.php';
 require_once __DIR__.'/coupon.php';
 require_once __DIR__.'/notifications.php';
 require_once __DIR__.'/socialite.php';
+require_once __DIR__.'/reparateur.php';
+require_once __DIR__.'/client.php';
 

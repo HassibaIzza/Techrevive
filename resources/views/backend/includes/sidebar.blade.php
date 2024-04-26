@@ -9,7 +9,7 @@
             <img src="{{asset('backend_assets')}}/images/logo-icon.png" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h4 class="logo-text">Rukada</h4>
+            <h4 class="logo-text">TEchRevive</h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
@@ -18,7 +18,7 @@
     <ul class="metismenu" id="menu">
         <li class="menu-label">User</li>
         <li>
-            <a href="{{route( $role . '-profile')}}" aria-expanded="false">
+            <a href="{{route(  'vendor-profile')}}" aria-expanded="false">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
                 <div class="menu-title">Profile</div>
@@ -97,7 +97,7 @@
                     <div class="menu-title">Products</div>
                 </a>
                 <ul>
-                    <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    <li> <a href="{{route('vendor-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
                     <li> <a href="{{route('vendor-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Product</a>
@@ -111,7 +111,7 @@
                     <div class="menu-title">Coupons</div>
                 </a>
                 <ul>
-                    <li> <a href="{{route($role . '-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    <li> <a href="{{route( 'vendor-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
                     </li>
                     <li> <a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
                             Coupon</a>

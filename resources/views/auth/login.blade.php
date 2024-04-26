@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <!-- Required meta tags -->
+    <!-- Meta tags requis -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     @include('backend.includes.favicon')
     @include('backend.includes.css')
-    <title>Sign in</title>
-</head>-
-
+    <title>Connexion</title>
+</head>
 
 <body class="bg-login">
 <!--wrapper-->
@@ -20,14 +19,14 @@
                 <div class="col mx-auto">
                     <div class="mb-4 text-center">
                         
-                        {{-- comment <img src="{{asset('backend_assets')}}/images/logo-img.png" width="180" alt="" />  --}}
+                        {{-- commentaire <img src="{{asset('backend_assets')}}/images/logo-img.png" width="180" alt="" />  --}}
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-4 rounded">
                                 <div class="text-center">
-                                    <h3 class="">Sign in</h3>
-                                    <p>Don't have an account yet? <a href="{{ url('/register') }}">Sign up here</a>
+                                    <h3 class="">Connexion</h3>
+                                    <p>Vous n'avez pas encore de compte ? <a href="{{ url('/register') }}">Inscrivez-vous ici</a>
                                     </p>
                                 </div>
                                 <div class="d-grid">
@@ -36,11 +35,11 @@
                           <img class="me-2" src="{{asset('backend_assets')}}/images/icons/search.svg" width="16"
                                alt="Image
                           Description">
-                          <span>Sign in with Google</span>
+                          <span>Connectez-vous avec Google</span>
 											</span>
                                     </a>
                                 </div>
-                                <div class="login-separater text-center mb-4"> <span>OR SIGN IN WITH USERNAME</span>
+                                <div class="login-separater text-center mb-4"> <span>OU CONNECTEZ-VOUS AVEC VOTRE NOM D'UTILISATEUR</span>
                                     <hr/>
                                 </div>
                                 <div class="form-body">
@@ -49,9 +48,9 @@
                                         @csrf
 
                                         <div class="col-sm-12">
-                                            <label for="inputUserName" class="form-label">Username</label>
+                                            <label for="inputUserName" class="form-label">Nom d'utilisateur</label>
                                             <input name="username" type="text" class="form-control" id="inputUserName"
-                                                   placeholder="Username" autocomplete="username"
+                                                   placeholder="Nom d'utilisateur" autocomplete="username"
                                                    autofocus
                                                    required>
                                             <small style="color: #e20000" class="error"
@@ -60,11 +59,11 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="inputChoosePassword" class="form-label">Enter Password</label>
+                                            <label for="inputChoosePassword" class="form-label">Entrez le mot de passe</label>
                                             <div class="input-group" id="show_hide_password">
                                                 <input name="password" autocomplete="current-password"
                                                        type="password" class="form-control border-end-0"
-                                                       id="inputChoosePassword" placeholder="Enter Password"
+                                                       id="inputChoosePassword" placeholder="Entrez le mot de passe"
                                                        required> <a	href="javascript:;"
                                                                        class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
@@ -73,12 +72,12 @@
                                             <div class="form-check form-switch">
                                                 <input name="remember" class="form-check-input" type="checkbox"
                                                        id="flexSwitchCheckChecked" checked>
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                                                <label class="form-check-label" for="flexSwitchCheckChecked">Se souvenir de moi</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">
-                                                <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
+                                                <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Connexion</button>
                                             </div>
                                         </div>
                                     </form>
@@ -95,7 +94,7 @@
 <!--end wrapper-->
 @include('backend.includes.js')
 
-<!--Password show & hide js -->
+<!--Script pour afficher/masquer le mot de passe -->
 <script>
     $(document).ready(function () {
         $("#show_hide_password a").on('click', function (event) {
