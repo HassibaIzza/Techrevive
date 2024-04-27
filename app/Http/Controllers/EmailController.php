@@ -5,12 +5,10 @@ use App\Models\Marque;
 use App\Models\Typep;
 use App\Models\Typepanne;
 use App\Models\RendezVous;
-
-
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Mail;
+use Illuminate\Support\Facades\DB;
 
 class EmailController extends Controller
 {
