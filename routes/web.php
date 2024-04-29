@@ -45,15 +45,9 @@ Route::get('/boutique', function () {
     return view('backend.boutique.boutique');
 })->name('boutique');
 
-Route::get('/forgot', function () {
-    return view('auth.forgot-password');
-})->name('forgot');
 
-Route::get('/test-mail', function () {
-    Mail::raw('Hello, this is a test mail!', function ($message) {
-        $message->to('test@example.com')->subject('Test Mail');
-    });
-});
+
+
 
 require_once __DIR__.'/auth.php';
 require_once __DIR__.'/admin.php';

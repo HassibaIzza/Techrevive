@@ -8,7 +8,7 @@
     @include('backend.includes.favicon')
     @include('backend.includes.css')
     <title>Sign in</title>
-</head>-
+</head>
 
 
 <body class="bg-login">
@@ -75,6 +75,7 @@
                                                        id="flexSwitchCheckChecked" checked>
                                                 <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
                                             </div>
+                                            <a href="{{route('password.request')}}" class="forgot-password-link">Mot de passe oublié ?</a>
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">
