@@ -6,9 +6,19 @@ use App\Models\Typep;
 use App\Models\Typepanne;
 use App\Models\RendezVous;
 use App\Models\User;
+use App\Notifications\PanneNotification;
 use Illuminate\Http\Request;
 use Mail;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class EmailController extends Controller
 {
@@ -90,6 +100,8 @@ class EmailController extends Controller
     // Enregistrer les données dans la base de données après avoir envoyé l'e-mail
     $rendezVous->save();
 
+    
+
         /*Mail::send('email-template', $data, function($message) use ($data) {
           $message->to('hadjerjawan@gmail.com')
           ->subject($data['subject']);
@@ -100,6 +112,11 @@ class EmailController extends Controller
           ->subject('Panne d\'un appareil');
   });
 
+        $fab = User::where('role', 'fabricant')->get();
+        Notification::send($fab, new PanneNotification());
+        return redirect(RouteServiceProvider::HOME);
+
+       
         return back()->with(['message' => 'Message envoyé avec succés!']);
          
     
