@@ -7,8 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     @include('backend.includes.favicon')
     @include('backend.includes.css')
+<<<<<<< HEAD
     <title>Connexion</title>
 </head>
+=======
+    <title>Sign in</title>
+</head>
+
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 
 <body class="bg-login">
 <!--wrapper-->
@@ -74,6 +80,7 @@
                                                        id="flexSwitchCheckChecked" checked>
                                                 <label class="form-check-label" for="flexSwitchCheckChecked">Se souvenir de moi</label>
                                             </div>
+                                            <a href="{{route('password.request')}}" class="forgot-password-link">Mot de passe oublié ?</a>
                                         </div>
                                         <div class="col-12">
                                             <div class="d-grid">

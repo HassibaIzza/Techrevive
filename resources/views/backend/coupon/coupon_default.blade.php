@@ -73,12 +73,9 @@
                                                 <div class="modal-body">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <form class="coupon_form" action="{{route
-                                                            ('vendor-coupon-update')
-                                                            }}" method="POST" enctype="multipart/form-data">
+                                                            <form class="coupon_form" action="{{route('vendor-coupon-update')}}" method="POST" enctype="multipart/form-data">
                                                                 @csrf
-                                                                <input name="coupon_id" value="{{$item->coupon_id}}"
-                                                                       hidden/>
+                                                                <input name="coupon_id" value="{{$item->coupon_id}}" hidden/>
                                                                 <div class="row mb-3">
                                                                     <div class="col-sm-3">
                                                                         <h6 class="mb-0">Coupon Code</h6>

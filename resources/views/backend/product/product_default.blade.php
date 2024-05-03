@@ -22,7 +22,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="ms-auto" style="margin-bottom: 20px">
-                    @if(Auth::user()->role == "vendor")
+                    @if(Auth::user()->role == "vendor || client")
                         <a href="add_product" class="btn btn-primary radius-30 mt-2 mt-lg-0">
                             <i class="bx bxs-plus-square"></i>Add New Product</a></div>
                 @endif

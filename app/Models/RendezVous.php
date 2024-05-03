@@ -19,6 +19,7 @@ class RendezVous extends Model
         'nom',
         'sujet',
     ];
+<<<<<<< HEAD
     public function marque()
     {
         return $this->belongsTo(Marque::class);
@@ -28,5 +29,8 @@ class RendezVous extends Model
     {
         return $this->belongsTo(User::class);
     }
+=======
+
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
     // Define any relationships or custom methods here if needed
 }

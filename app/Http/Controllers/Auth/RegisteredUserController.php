@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Validation\Rules\Password;
+
 
 class RegisteredUserController extends Controller
 {
@@ -38,8 +40,16 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'username' => ['required', 'string', 'max:100', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role' => 'required|string|in:vendor,client,reparateur',
+            'password' => [
+                'required',
+                'confirmed',
+                Password::min(8) // Longueur minimale de 8 caractères
+                    ->mixedCase() // Doit contenir des majuscules et des minuscules
+                    ->numbers() // Doit contenir des chiffres
+                    ->symbols() // Doit contenir des symboles
+                    ->uncompromised(), // Vérifie si le mot de passe a été exposé dans des fuites de données (nécessite une connexion internet)
+            ],
+            'role' => 'required|string|in:vendor,client,reparateur,Fabricant',
         ]);
 
 
@@ -50,11 +60,15 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->input('role'),
+
         ]);
 
         if ($request->role == 'vendor'){
             self::completeVendorRegistration($user);
-        } 
+        }
+        
+        
+        
 
         event(new Registered($user));
 
@@ -63,7 +77,6 @@ class RegisteredUserController extends Controller
         // notify the admin
         $admins = User::where('role', 'admin')->get();
         Notification::send($admins, new RegisteredNewVendor());
-
         return redirect(RouteServiceProvider::HOME);
     }
 

@@ -22,6 +22,8 @@ Route::middleware(['auth', 'auth.role:admin'])
         Route::get('remove_product/{id}', 'productRemove')
             ->whereNumber('id')
             ->name('product-remove');
+        Route::get('add_product', 'productAdd')->name('product-add');
+        Route::post('create_product', 'productCreate')->name('product-create');
 
     });
 
@@ -44,3 +46,6 @@ Route::middleware(['auth', 'auth.role:vendor'])
         Route::post('activate_product', 'productActivate')->name('product-activate');
 
     });
+
+
+    

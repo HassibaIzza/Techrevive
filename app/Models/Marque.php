@@ -16,8 +16,11 @@ class Marque extends Model
     {
         return $this->hasMany(User::class);
     }
+<<<<<<< HEAD
     public function rendezvous()
     {
         return $this->hasMany(RendezVous::class);
     }
+=======
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 }

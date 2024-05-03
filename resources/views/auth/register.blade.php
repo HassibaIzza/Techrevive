@@ -106,6 +106,7 @@ $errList['passwordErr'] = $errors->get('password') ? $errors->get('password')[0]
                                                     <option value="vendor">Fabricant</option>
                                                     <option value="client">Client</option>
                                                     <option value="reparateur">Réparateur</option>
+                                                    <option value="Fabricant">Fabricant</option>
                                                 </select>
                                             </div>
                                             

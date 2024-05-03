@@ -7,6 +7,8 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{asset('backend_assets')}}/images/laptop-1928.png" type="image/png" />
+
     <title>@yield('title', 'Unknown Page')</title>
 
     <!-- Google Font -->
@@ -70,7 +72,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Accuiel</a></li>
-                <li><a href="./shop-grid.html">boutique</a></li>
+                <li><a href="/boutique">boutique</a></li>
                 <li><a href="#">Réparation</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Réparer</a></li>
@@ -148,7 +150,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Accueil</a></li>
-                            <li><a href="./shop-grid.html">Boutique</a></li>
+                            <li><a href="{{route('boutique')}}">Boutique</a></li>
                             <li><a href="#">Réparer</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Réparer</a></li>

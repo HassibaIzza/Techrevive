@@ -4,13 +4,25 @@
     $status = Auth::user()->status;
 @endphp
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('backend_assets')}}/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            <img src="{{asset('backend_assets')}}/images/laptop-1928.png" class="logo-icon" alt="logo icon">
         </div>
+<<<<<<< HEAD
         <div>
             <h4 class="logo-text">TechRevive</h4>
+=======
+        
+        <div class="header__logo">
+            <a href="{{url('/')}}"class="logo-text" style="font-family: 'Merriweather', serif"><span id="span1">T</span>Ech<span>Revive</span></a>
+        </div>
+        <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i></div>
     </div>
@@ -35,12 +47,20 @@
         <li class="menu-label"></li>
         @if($role === 'admin')
             <li>
+<<<<<<< HEAD
                 <a href="{{route('admin-vendor-list')}}" style="cursor: pointer">
                     <div class="parent-icon"><i class='lni lni-world'></i></div>
                     <div class="menu-title">Fournisseurs</div>
+=======
+                <a  href="{{route('admin-vendor-list')}}" style="cursor: pointer">
+                    <div class="parent-icon"><i class='lni lni-world'></i>
+                    </div>
+                    <div class="menu-title">Users</div>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
                 </a>
             </li>
         @endif
+<<<<<<< HEAD
 
         @if($status)
             <li class="has-submenu">
@@ -52,6 +72,39 @@
                 <ul class="submenu">
                     <li><a href="{{route('brand')}}"><i class="bx bx-right-arrow-alt"></i>Voir Tout</a></li>
                     <li><a href="{{route('brand-add')}}"><i class="bx bx-right-arrow-alt"></i>Ajouter Marque</a></li>
+=======
+    
+        @if($status && $role != 'Fabricant' && $role != 'client')
+            <li>
+                <a class="has-arrow" style="cursor: pointer">
+                    <div class="parent-icon"><i class='lni lni-checkmark-circle'></i>
+                    </div>
+                    <div class="menu-title">Brands</div>
+                </a>
+                <ul>
+                    @if($role === 'admin')
+                    <li> <a href="{{route('brand')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    @endif
+                    <li> <a href="{{route('brand-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Brand</a>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <a class="has-arrow" style="cursor: pointer">
+                    <div class="parent-icon"><i class='lni lni-folder'></i>
+                    </div>
+                    <div class="menu-title">Categories</div>
+                </a>
+                <ul>
+                    @if($role === 'admin')
+                    <li> <a href="{{route('category')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    @endif
+                    <li> <a href="{{route('category-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
+                    </li>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
                 </ul>
             </li>
           </li>
@@ -63,6 +116,7 @@
                     <div class="menu-title">Catégories</div>
                     <div class="submenu-arrow"><i class="bx bx-chevron-right"></i></div>
                 </a>
+<<<<<<< HEAD
                 <ul class="submenu">
                     <li><a href="{{route('category')}}"><i class="bx bx-right-arrow-alt"></i>Voir Tout</a></li>
                     <li><a href="{{route('category-add')}}"><i class="bx bx-right-arrow-alt"></i>Ajouter Catégorie</a></li>
@@ -86,6 +140,16 @@
                 <ul class="submenu">
                     <li><a href="{{route('sub-category')}}"><i class="bx bx-right-arrow-alt"></i>Voir Tout</a></li>
                     <li><a href="{{route('sub-category-add')}}"><i class="bx bx-right-arrow-alt"></i>Ajouter Sous-catégorie</a></li>
+=======
+                <ul>
+                    @if($role === 'admin')
+                    <li> <a href="{{route('sub-category')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    @endif
+                    <li> <a href="{{route('sub-category-add')}}"><i class="bx bx-right-arrow-alt"></i>Add Sub
+                            Category</a>
+                    </li>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
                 </ul>
             </li>
             <li class="has-submenu">
@@ -94,9 +158,18 @@
                     <div class="menu-title">Produits</div>
                     <div class="submenu-arrow"><i class="bx bx-chevron-right"></i></div>
                 </a>
+<<<<<<< HEAD
                 <ul class="submenu">
                     <li><a href="{{route('vendor-product')}}"><i class="bx bx-right-arrow-alt"></i>Voir Tout</a></li>
                     <li><a href="{{route('vendor-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Ajouter Produit</a></li>
+=======
+                <ul>
+                    <li> <a href="{{route($role . '-product')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    <li> <a href="{{route($role . '-product-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
+                            Product</a>
+                    </li>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
                 </ul>
             </li>
             <li class="has-submenu">
@@ -105,9 +178,18 @@
                     <div class="menu-title">Coupons</div>
                     <div class="submenu-arrow"><i class="bx bx-chevron-right"></i></div>
                 </a>
+<<<<<<< HEAD
                 <ul class="submenu">
                     <li><a href="{{route('vendor-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Voir Tout</a></li>
                     <li><a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Ajouter Coupon</a></li>
+=======
+                <ul>
+                    <li> <a href="{{route('vendor-coupon')}}"><i class="bx bx-right-arrow-alt"></i>Show All</a>
+                    </li>
+                    <li> <a href="{{route('vendor-coupon-add')}}"><i class="bx bx-right-arrow-alt"></i>Add
+                            Coupon</a>
+                    </li>
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
                 </ul>
             </li>
             <!-- Autres éléments de la barre latérale... -->

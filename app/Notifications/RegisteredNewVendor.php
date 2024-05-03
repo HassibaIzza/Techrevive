@@ -56,7 +56,7 @@ class RegisteredNewVendor extends Notification
     {
         return [
             'title' => 'New User Registered',
-            'message' => 'New vendor account need to be activated.',
+            'message' => 'New user account need to be activated.',
             'icon' => 'bx-group'
         ];
     }

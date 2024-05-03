@@ -5,6 +5,7 @@ use App\Models\Marque;
 use App\Models\Typep;
 use App\Models\Typepanne;
 use App\Models\RendezVous;
+<<<<<<< HEAD
 
 
 
@@ -12,6 +13,22 @@ use App\Models\RendezVous;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Mail;
+=======
+use App\Models\User;
+use App\Notifications\PanneNotification;
+use Illuminate\Http\Request;
+use Mail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 
 class EmailController extends Controller
 {
@@ -93,6 +110,11 @@ class EmailController extends Controller
     // Enregistrer les données dans la base de données après avoir envoyé l'e-mail
     $rendezVous->save();
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
         /*Mail::send('email-template', $data, function($message) use ($data) {
           $message->to('hadjerjawan@gmail.com')
           ->subject($data['subject']);
@@ -103,6 +125,14 @@ class EmailController extends Controller
           ->subject('Panne d\'un appareil');
   });
 
+<<<<<<< HEAD
+=======
+        $fab = User::where('role', 'fabricant')->get();
+        Notification::send($fab, new PanneNotification());
+        return redirect(RouteServiceProvider::HOME);
+
+       
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
         return back()->with(['message' => 'Message envoyé avec succés!']);
          
     

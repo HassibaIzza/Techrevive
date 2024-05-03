@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\ReparateurController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PanneController;
+=======
+ 
+use App\Http\Controllers\EmailController;
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +20,7 @@ use App\Http\Controllers\PanneController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 // routes/web.php
 
 Route::post('/fetch-states/{id}', [EmailController::class, 'fetchStates'])->name('fetch.states');
@@ -35,12 +41,26 @@ Route::get('/email', function () {
   return view('email');
 });
 
+=======
+Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
+Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
+
+Route::post('/fetch-states/{id}', [App\Http\Controllers\EmailController::class, 'fetchStates'])->name('fetch.states');
+
+
+Route::post('/fetch-cities/{id}', [App\Http\Controllers\EmailController::class, 'fetchCities'])->name('fetch.cities');
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 
 Route::get('/', function () {
     return view('index');
 });
+<<<<<<< HEAD
 Route::get('/fr', function () {
   return view('admin.creat');
+=======
+Route::get('/index', function () {
+    return view('index');
+>>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 });
 
 Route::get('/register', function () {
@@ -61,6 +81,13 @@ Route::fallback(function (){
     return redirect()->route('login');
 });
 
+Route::get('/boutique', function () {
+    return view('backend.boutique.boutique');
+})->name('boutique');
+
+
+
+
 
 require_once __DIR__.'/auth.php';
 require_once __DIR__.'/admin.php';
@@ -76,4 +103,6 @@ require_once __DIR__.'/notifications.php';
 require_once __DIR__.'/socialite.php';
 require_once __DIR__.'/reparateur.php';
 require_once __DIR__.'/client.php';
+require_once __DIR__.'/fabricant.php';
+
 

@@ -1,4 +1,6 @@
-@php use App\MyHelpers;use Illuminate\Support\Facades\Auth; @endphp
+@php use App\MyHelpers;
+use Illuminate\Support\Facades\Auth; 
+@endphp
 
 @php
     $authData = Auth::user();

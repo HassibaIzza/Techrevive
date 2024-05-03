@@ -34,7 +34,8 @@ class AdminController extends UserController
 
     public function userRemove(Request $request){
         try {
-            $user = User::findOrFail($request->id);
+            
+            $user = User::findOrFail($request->vendor_id);
             MyHelpers::deleteImageFromStorage($user->photo , 'uploads/images/profile/');
             if ($user->delete())
                 return redirect()->route('admin-vendor-list')->with('success', 'Successfully removed.');
@@ -46,7 +47,7 @@ class AdminController extends UserController
     }
 
     public function vendorActivate(Request $request){
-        $user_id = $request->id;
+        $user_id = $request->vendor_id;
 
         // check whether activate or de-activate
         if ($request->current_status == "1"){
@@ -60,18 +61,18 @@ class AdminController extends UserController
             // notify the vendor
             Notification::send($vendor, new VendorActivated());
 
-            return response(['msg' => 'Vendor now is activated.'], 200);
+            return response(['msg' => 'user now is activated.'], 200);
         }catch (ModelNotFoundException $exception){
-            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');
+            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this user, try again');
         }
     }
     public function vendorDeActivate(int $user_id){
 
         try {
             User::findOrFail($user_id)->update(['status' => 0]);
-            return response(['msg' => 'Vendor now is disabled.'], 200);
+            return response(['msg' => 'user now is disabled.'], 200);
         }catch (ModelNotFoundException $exception){
-            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this vendor, try again');
+            return redirect()->route('admin-vendor-list')->with('error', 'Failed to activate this user, try again');
         }
     }
 

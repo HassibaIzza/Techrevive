@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Shop Name</h6>
+                                        <h6 class="mb-0">shop Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input name="shop_name" type="text" class="form-control"
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Shop Description</h6>
+                                        <h6 class="mb-0">shop Description</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <textarea id="mytextarea"
@@ -181,36 +181,41 @@
                                         @csrf
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0">Current Password</h6>
+                                                <h6 class="mb-0">Current Password</h6></br>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input name="password" type="password" class="form-control" required/>
-                                                <small style="color: #e20000" class="error" id="password-error"></small>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">New Password</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input name="new_password" type="password" class="form-control"
-                                                       autofocus/>
-                                                <small style="color: #e20000" class="error"
-                                                       id="new_password-error"></small>
+                                            <div class="input-group" id="show_hide_password">
+                                                <input name="password" autocomplete="current-password"
+                                                       type="password" class="form-control border-end-0"
+                                                       id="inputChoosePassword" placeholder="Enter Password"
+                                                       required> <a	href="javascript:;"
+                                                                       class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0">Confirm Password</h6>
+                                                <h6 class="mb-0">New Password</h6></br>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input name="confirm_password" type="password" class="form-control"
-                                                       autofocus/>
-                                                <small style="color: #e20000" class="error"
-                                                       id="confirm_password-error"></small>
+                                            <div class="input-group" id="show_hide_password">
+                                                <input name="new_password" autocomplete="current-password"
+                                                       type="password" class="form-control border-end-0"
+                                                       id="inputChoosePassword" placeholder="Enter Password"
+                                                       required> <a	href="javascript:;"
+                                                                       class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Confirm Password</h6></br>
+                                            </div>
+                                            <div class="input-group" id="show_hide_password">
+                                                <input name="confirm_password" autocomplete="current-password"
+                                                       type="password" class="form-control border-end-0"
+                                                       id="inputChoosePassword" placeholder="Enter Password"
+                                                       required> <a	href="javascript:;"
+                                                                       class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
                                             <div class="col-sm-3"></div>
                                             <div class="col-sm-9 text-secondary">
                                                 <input type="submit" class="btn btn-primary px-4" value="Save"/>
@@ -373,6 +378,22 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#show_hide_password a").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password input').attr("type") == "text") {
+                    $('#show_hide_password input').attr('type', 'password');
+                    $('#show_hide_password i').addClass("bx-hide");
+                    $('#show_hide_password i').removeClass("bx-show");
+                } else if ($('#show_hide_password input').attr("type") == "password") {
+                    $('#show_hide_password input').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("bx-hide");
+                    $('#show_hide_password i').addClass("bx-show");
+                }
+            });
+        });
+    </script>
 @endsection
 
 @section('js')
@@ -387,12 +408,12 @@
             });
         });
     </script>
-    <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
-            referrerpolicy="origin">
-    </script>
+    <script src="{{ asset('backend_assets') }}/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#mytextarea',
+            apiKey: 'dqc852mk44lbcldyv5ikw3e7uhrl50wh4p502dbihnagdz1t', 
         });
     </script>
+    
 @endsection

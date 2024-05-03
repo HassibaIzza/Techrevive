@@ -26,6 +26,7 @@ class AdminInfoRequest extends FormRequest
     public function rules()
     {
         return [
+            'id' => ['required', 'integer', Rule::exists('users', 'id')],  // Assurez-vous que l'id existe dans la table 'users'.
             'name' => ['required', 'string', 'max:255', 'regex:/^[\pL\s\-]+$/u'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
             'username' => ['required', 'string', 'max:100', Rule::unique('users')->ignore(Auth::id())],

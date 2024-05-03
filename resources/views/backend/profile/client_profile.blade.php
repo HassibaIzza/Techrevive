@@ -45,7 +45,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <form id="profile_image" method="POST" action="{{route('vendor-profile-image-update')
+                            <form id="profile_image" method="POST" action="{{route('client-profile-image-update')
                             }}" enctype="multipart/form-data">
                                 @csrf
                                 <img id="show_image" src="{{!empty($data->photo) ?
@@ -75,7 +75,7 @@
                     <div class="card-body">
                         <h4 class="d-flex align-items-center mb-3">User Info</h4>
                         <br>
-                        <form id="info_form" action="{{route('vendor-profile-info-update')}}" method="POST"
+                        <form id="info_form" action="{{route('client-profile-info-update')}}" method="POST"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
@@ -108,6 +108,7 @@
                                     <small style="color: #e20000" class="error" id="username-error"></small>
                                 </div>
                             </div>
+                            
                             
                             <div class="row mb-3">
                                 <div class="col-sm-3">
@@ -157,7 +158,7 @@
                             <div class="card-body">
                                 <h4 class="d-flex align-items-center mb-3">Change Password</h4>
                                 <br>
-                                <form id="password_form" action="{{route('vendor-profile-password-update')}}"
+                                <form id="password_form" action="{{route('client-profile-password-update')}}"
                                       method="POST">
                                     @csrf
                                     <div class="row mb-3">
@@ -370,12 +371,11 @@
             });
         });
     </script>
-    <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
-            referrerpolicy="origin">
-    </script>
+    <script src="{{ asset('backend_assets') }}/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#mytextarea',
+            apiKey: 'dqc852mk44lbcldyv5ikw3e7uhrl50wh4p502dbihnagdz1t', 
         });
     </script>
 @endsection
