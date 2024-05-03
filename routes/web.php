@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReparateurController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\PanneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,32 @@ use App\Http\Controllers\ReparateurController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// routes/web.php
+
+Route::post('/fetch-states/{id}', [EmailController::class, 'fetchStates'])->name('fetch.states');
+
+Route::post('/fetch-cities/{id}', [EmailController::class, 'fetchCities'])->name('fetch.cities');
+
+
+Route::get('/liste-des-pannes', [PanneController::class, 'index'])->name('listepannes');
+
+
 
 Route::post('/profile/info/update', 'ProfileController@updateInfo')->name('reparateur-profile-info-update');
+
+Route::get('/email', [EmailController::class, 'create']);
+Route::post('/email', [EmailController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/email', function () {
+  return view('email');
+});
 
 
 Route::get('/', function () {
     return view('index');
+});
+Route::get('/fr', function () {
+  return view('admin.creat');
 });
 
 Route::get('/register', function () {
