@@ -4,10 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-
-class BrandRequest extends FormRequest
+class MarqueRequest extends FormRequest
 {
     private const ALLOWED_EXTENSION = 'jpg,jpeg,png,webp,gif';
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -15,7 +15,7 @@ class BrandRequest extends FormRequest
      */
     public function authorize()
     {
-        return 1;
+        return true;
     }
 
     /**
@@ -25,16 +25,27 @@ class BrandRequest extends FormRequest
      */
     public function rules()
     {
-        // get the brand id ( for updating only )
-        $currentBrandId = 0;
-        if ($this->has('Marque_id')){
-            $currentBrandId = $this->get('Marque_id');
-        }
-
-        return [
-            'Marque_name' =>  ['required', 'string', 'max:150',
-                Rule::unique('Marque')->ignore($currentBrandId, 'Marque_id')],
-            'Marque_image' => [$currentBrandId != 0 ? 'nullable':'required', 'image', 'mimes:' . self::ALLOWED_EXTENSION]
+         // get the brand id ( for updating only )
+         $currentBrandId = 0;
+         if ($this->has('id')){
+             $currentBrandId = $this->get('id');
+         }
+ 
+         return [
+            'name' => 'required|max:255|unique:marques,name'  . $this->marque ,
+            'gmail' => 'required|email|max:255',
+            
         ];
+
+            
+
+        
     }
+
+    public function messages()
+{
+    return [
+        'name.unique' => 'la marque existe déjà.',
+    ];
+}
 }

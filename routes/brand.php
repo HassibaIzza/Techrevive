@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\BrandController;
 use App\Models\BrandModel;
+use App\Models\Marque;
+use App\Http\Controllers\MarqueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,15 @@ Route::middleware(['auth'])->controller(BrandController::class)->group(function 
         Route::post('create_brand', 'brandCreate')->name('brand-create');
         Route::get('remove_brand/{id}', 'brandRemove')->name('brand-remove')->whereNumber('id');
         Route::post('update_brand', 'brandUpdate')->name('brand-update');
+    });
+
+    Route::middleware(['auth'])->controller(MarqueController::class)->group(function (){
+        Route::view('add_marque', 'backend.marque.marque_add')->name('marque-add');
+        Route::post('create_marque', [MarqueController::class, 'store'])->name('marque.create');
+        Route::get('marques', [MarqueController::class, 'show'])->name('marques.show');
+        Route::post('update_marque', 'marqueUpdate')->name('marque-update');
+        Route::get('remove_marque/{id}', [MarqueController::class, 'marqueRemove'])
+        ->name('marque_remove')->whereNumber('id');
+
+
     });

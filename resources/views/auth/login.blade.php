@@ -7,14 +7,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     @include('backend.includes.favicon')
     @include('backend.includes.css')
-<<<<<<< HEAD
+
     <title>Connexion</title>
 </head>
-=======
-    <title>Sign in</title>
-</head>
 
->>>>>>> f810932ac1716cac2fc71776c14db006754e38f6
 
 <body class="bg-login">
 <!--wrapper-->

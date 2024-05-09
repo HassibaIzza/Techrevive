@@ -155,7 +155,7 @@
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Réparer</a></li>
                                     <li><a href="./shoping-cart.html">Contacter Répateur</a></li>
-                                    <li><a href="./checkout.html">Contacter SAV</a></li>
+                                    <li><a href="{{route('send.email')}}">Contacter SAV</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">Blog</a></li>

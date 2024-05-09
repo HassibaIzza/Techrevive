@@ -9,34 +9,32 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
-
 class PanneController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Récupérer le rôle de l'utilisateur connecté
-        $role = Auth::user()->role;
+        // Récupérer l'utilisateur connecté
+        $user = Auth::user();
 
-        // Récupérer la marque de l'utilisateur connecté (si applicable)
-        $userMarqueId = Auth::user()->marque;
+        // Vérifier si l'utilisateur est un fabricant
+        if ($user->role === 'Fabricant') {
+            // Récupérer la marque de l'utilisateur
+            $marque = Marque::where('owner_id', $user->id)->first();
 
-        // Initialiser une variable pour stocker les rendez-vous
-        $rendezvous = null;
-
-        // Si l'utilisateur est un fournisseur (vendor) et est associé à une marque
-        if ($role === 'vendor' && !is_null($userMarqueId)) {
-            // Récupérer les rendez-vous pour la marque de l'utilisateur
-            $rendezvous = RendezVous::where('marque', $userMarqueId)->get();
-            
-            // Récupérer le nom de la marque
-            $marque = Marque::where('id', $userMarqueId)->value('name');
+            // Si la marque est trouvée
+            if ($marque) {
+                // Récupérer les pannes pour cette marque
+                $rendezvous = RendezVous::where('marque', $marque->name)->get();
+            } else {
+                // Si la marque n'est pas trouvée, renvoyer une liste vide
+                $rendezvous = collect();
+            }
         } else {
-            // Si l'utilisateur n'est pas un fournisseur ou n'est pas associé à une marque, afficher tous les rendez-vous
+            // Si l'utilisateur n'est pas un fabricant, renvoyer toutes les pannes
             $rendezvous = RendezVous::all();
-            $marque = null; // Aucune marque spécifique à afficher
         }
 
         // Passer les données à la vue
-        return view('backend.Les pannes.listepannes', compact('rendezvous', 'marque', 'role'));
+        return view('backend.les pannes.listepannes', compact('rendezvous'));
     }
 }
